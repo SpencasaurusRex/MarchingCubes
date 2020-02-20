@@ -2,7 +2,7 @@
 using Components;
 using UnityEngine;
 
-public class ChunkCoord : IEquatable<ChunkCoord>
+public struct  ChunkCoord : IEquatable<ChunkCoord>
 {
     public int X;
     public int Y;
@@ -20,6 +20,7 @@ public class ChunkCoord : IEquatable<ChunkCoord>
 
     public static ChunkCoord FromPosition(Vector3 position) =>
         FromBlockCoords((int) position.x, (int) position.y, (int) position.z);
+
 
     public bool Equals(ChunkCoord other)
     {
