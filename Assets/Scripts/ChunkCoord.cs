@@ -16,7 +16,7 @@ public struct  ChunkCoord : IEquatable<ChunkCoord>
     }
 
     public static ChunkCoord FromBlockCoords(int gx, int gy, int gz) =>
-        new ChunkCoord(gx << Chunk.Bits, gy << Chunk.Bits, gz << Chunk.Bits);
+        new ChunkCoord(gx >> Chunk.Bits, gy >> Chunk.Bits, gz >> Chunk.Bits);
 
     public static ChunkCoord FromPosition(Vector3 position) =>
         FromBlockCoords((int) position.x, (int) position.y, (int) position.z);
@@ -24,7 +24,6 @@ public struct  ChunkCoord : IEquatable<ChunkCoord>
 
     public bool Equals(ChunkCoord other)
     {
-        if (ReferenceEquals(null, other)) return false;
         return X == other.X && Y == other.Y && Z == other.Z;
     }
 

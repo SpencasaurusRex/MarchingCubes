@@ -1,6 +1,8 @@
-﻿namespace Components
+﻿using Unity.Entities;
+
+namespace Components
 {
-    public class Chunk
+    public struct Chunk : IComponentData
     {
         public const int Bits = 4;
         public const int Size = 1 << Bits;

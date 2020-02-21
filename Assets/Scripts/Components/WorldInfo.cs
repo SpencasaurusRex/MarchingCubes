@@ -1,9 +1,11 @@
-﻿using Unity.Entities;
+﻿using Unity.Collections;
+using Unity.Entities;
 
 namespace Components
 {
-    struct WorldInfo : IComponentData
+    [GenerateAuthoringComponent]
+    public class WorldInfo : IComponentData
     {
-
+        public NativeHashMap<ChunkCoord, Chunk> Chunks = new NativeHashMap<ChunkCoord, Chunk>();
     }
 }
